@@ -4,7 +4,6 @@ dotenv.config();
 import cors from 'cors';
 import express, { Express } from 'express';
 import cookieParser from 'cookie-parser';
-import passport from 'passport';
 
 import AuthRoutes from './routes/AuthRoutes';
 import UserRoutes from './routes/UserRoutes';
@@ -17,8 +16,6 @@ export const runServer = () => {
   const app: Express = express();
 
   app.use(cors({ origin: process.env.CLIENT_ORIGIN, credentials: true }));
-
-  app.use(passport.initialize());
 
   app.use([
     cookieParser(process.env.CLIENT_ORIGIN),
