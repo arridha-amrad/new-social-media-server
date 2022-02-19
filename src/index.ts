@@ -7,6 +7,8 @@ import cookieParser from 'cookie-parser';
 
 import AuthRoutes from './routes/AuthRoutes';
 import UserRoutes from './routes/UserRoutes';
+import PostRoutes from "./routes/PostRoutes";
+import fileUpload from 'express-fileupload';
 
 import { connect } from './database/mongo';
 
@@ -18,6 +20,9 @@ export const runServer = () => {
   app.use(cors({ origin: process.env.CLIENT_ORIGIN, credentials: true }));
 
   app.use([
+    fileUpload({
+      useTempFiles: true,
+    }),
     cookieParser(process.env.CLIENT_ORIGIN),
     express.json(),
     express.urlencoded({ extended: false }),
@@ -25,6 +30,7 @@ export const runServer = () => {
 
   app.use('/api/auth', AuthRoutes);
   app.use('/api/user', UserRoutes);
+  app.use('/api/post', PostRoutes);
 
   const PORT = process.env.PORT;
   app.listen(PORT, () => {

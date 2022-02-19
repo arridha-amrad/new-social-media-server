@@ -11,5 +11,8 @@ declare namespace NodeJS {
     GOOGLE_OAUTH_REDIRECT_URL: string;
     GOOGLE_OAUTH_CLIENT_ID: string;
     GOOGLE_OAUTH_CLIENT_SECRET: string;
+    CLOUDINARY_API_KEY: string
+    CLOUDINARY_API_SECRET: string
+    CLOUDINARY_NAME: string
   }
 }

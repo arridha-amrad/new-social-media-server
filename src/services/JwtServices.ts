@@ -54,13 +54,13 @@ export const verifyTokenLink = (token: string): Promise<LinkPayloadType> => {
 
 //* ACCESS TOKEN
 const accessTokenSignOptions: jwt.SignOptions = {
-  expiresIn: '7s',
+  expiresIn: '7d',
   algorithm: 'RS256',
 };
 
 const accessTokenVerifyOptions: jwt.VerifyOptions = {
   algorithms: ['RS256'],
-  maxAge: '7s',
+  maxAge: '7d',
 };
 
 export const signAccessToken = (

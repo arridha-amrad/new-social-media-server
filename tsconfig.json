@@ -5,7 +5,10 @@
   "compilerOptions": {
     "target": "es6",
     "module": "commonjs",
-    "lib": ["ES6", "ES2016.Array.Include"],
+    "lib": [
+      "ES6",
+      "ES2016.Array.Include"
+    ],
     "skipLibCheck": true,
     "sourceMap": false,
     "outDir": "./dist",
@@ -15,9 +18,6 @@
     "strictNullChecks": true,
     "strictFunctionTypes": true,
     "noImplicitThis": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
@@ -27,6 +27,11 @@
     "baseUrl": "./src",
     "rootDir": "./src"
   },
-  "exclude": ["node_modules"],
-  "include": ["./src/**/*.ts", "./types/**.d.ts"]
+  "exclude": [
+    "node_modules"
+  ],
+  "include": [
+    "./src/**/*.ts",
+    "./types/**.d.ts"
+  ]
 }
